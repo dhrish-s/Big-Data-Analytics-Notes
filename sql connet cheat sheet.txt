@@ -1,0 +1,15 @@
+Cheat sheet to integerate SQL
+su root
+systemctl stop mysqld
+systemctl set-environment MYSQLD_OPTS="--skip-grant-tables --skip-networking"
+systemctl start mysqld
+mysql -uroot
+------- Mysql cmd 
+FLUSH PRIVILEGES;
+alter user 'root'@'localhost' IDENTIFIED BY 'hadoop';
+FLUSH PRIVILEGES;
+QUIT;
+------ CMD
+systemctl unset-environment MYSQLD_OPTS
+systemctl restart mysqld
+mysql -uroot -phadoop
